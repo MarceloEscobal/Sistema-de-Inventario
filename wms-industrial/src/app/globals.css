@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  :root {
+    /* Premium dark palette */
+    --bg-base:    #09090f;
+    --bg-surface: #0f0f1a;
+    --bg-elevated:#14142a;
+    --bg-card:    rgba(20, 20, 40, 0.7);
+    
+    /* Accent brand */
+    --accent-primary: #6c63ff;
+    --accent-secondary: #a78bfa;
+    --accent-glow:    rgba(108, 99, 255, 0.25);
+    --accent-subtle:  rgba(108, 99, 255, 0.1);
+    
+    /* Text */
+    --text-primary:   #f1f0ff;
+    --text-secondary: #9b98c0;
+    --text-muted:     #54516b;
+    
+    /* Status */
+    --status-success: #10d98e;
+    --status-warning: #f59e0b;
+    --status-danger:  #f43f70;
+    --status-info:    #38bdf8;
+    
+    /* Border */
+    --border-default: rgba(255,255,255,0.07);
+    --border-strong:  rgba(255,255,255,0.13);
+  }
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    border-color: var(--border-default);
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    background-image:
+      radial-gradient(ellipse 80% 60% at 50% -20%, rgba(108, 99, 255, 0.12), transparent),
+      radial-gradient(ellipse 60% 50% at 80% 100%, rgba(167, 139, 250, 0.06), transparent);
+    min-height: 100svh;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(108, 99, 255, 0.3); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(108, 99, 255, 0.5); }
+
+  /* Selection */
+  ::selection { background: rgba(108, 99, 255, 0.3); }
+}
+
+/* ─── Glassmorphism card ─── */
+@layer components {
+  .glass-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-default);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+  }
+
+  .glass-card-hover {
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .glass-card-hover:hover {
+    border-color: var(--border-strong);
+    box-shadow: 0 8px 40px rgba(108, 99, 255, 0.12);
+  }
+
+  /* ─── Buttons ─── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(135deg, #6c63ff 0%, #a78bfa 100%);
+    box-shadow: 0 2px 16px rgba(108, 99, 255, 0.35);
+    transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+  }
+  .btn-primary:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 24px rgba(108, 99, 255, 0.45);
+  }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 10px;
+    color: var(--text-secondary);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-default);
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+  }
+
+  .btn-danger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 10px;
+    color: var(--status-danger);
+    background: rgba(244, 63, 112, 0.1);
+    border: 1px solid rgba(244, 63, 112, 0.2);
+    transition: background 0.15s, border-color 0.15s;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn-danger:hover {
+    background: rgba(244, 63, 112, 0.18);
+    border-color: rgba(244, 63, 112, 0.4);
+  }
+
+  /* ─── Icon button ─── */
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid var(--border-default);
+    background: rgba(255,255,255,0.03);
+    color: var(--text-muted);
+    transition: all 0.15s;
+    cursor: pointer;
+  }
+  .btn-icon:hover {
+    background: rgba(108, 99, 255, 0.12);
+    border-color: rgba(108, 99, 255, 0.3);
+    color: var(--accent-secondary);
+  }
+  .btn-icon.danger:hover {
+    background: rgba(244, 63, 112, 0.12);
+    border-color: rgba(244, 63, 112, 0.3);
+    color: var(--status-danger);
+  }
+
+  /* ─── Input ─── */
+  .input-base {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-default);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .input-base::placeholder { color: var(--text-muted); }
+  .input-base:focus {
+    border-color: rgba(108, 99, 255, 0.5);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.12);
+  }
+
+  /* ─── Badge ─── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    border: 1px solid;
+  }
+  .badge-violet {
+    color: var(--accent-secondary);
+    background: rgba(108, 99, 255, 0.12);
+    border-color: rgba(108, 99, 255, 0.25);
+  }
+  .badge-success {
+    color: var(--status-success);
+    background: rgba(16, 217, 142, 0.1);
+    border-color: rgba(16, 217, 142, 0.2);
+  }
+  .badge-danger {
+    color: var(--status-danger);
+    background: rgba(244, 63, 112, 0.1);
+    border-color: rgba(244, 63, 112, 0.2);
+  }
+  .badge-warning {
+    color: var(--status-warning);
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.2);
+  }
+  .badge-info {
+    color: var(--status-info);
+    background: rgba(56, 189, 248, 0.1);
+    border-color: rgba(56, 189, 248, 0.2);
+  }
+
+  /* ─── Page header ─── */
+  .page-header {
+    margin-bottom: 2rem;
+  }
+  .page-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+  .page-subtitle {
+    margin-top: 0.35rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  /* ─── Table ─── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .data-table th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-default);
+  }
+  .data-table td {
+    padding: 0.85rem 1rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: background 0.15s;
+  }
+  .data-table tbody tr:hover td {
+    background: rgba(108, 99, 255, 0.04);
+  }
+  .data-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* ─── Stat card gradient border ─── */
+  .stat-card {
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.3), rgba(255,255,255,0.05));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
