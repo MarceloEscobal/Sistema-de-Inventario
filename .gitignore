@@ -8,7 +8,8 @@ bin/
 Sistema de Inventario/bin/
 
 # Java dependencies
-lib/
+# Only ignore Java-level lib at root or Sistema de Inventario, NOT src/lib
+/lib/
 Sistema de Inventario/lib/
 
 # Next.js build output
