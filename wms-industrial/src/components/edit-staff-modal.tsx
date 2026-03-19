@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, UserCog, Loader2, Mail, Lock, Shield } from "lucide-react"
-import { useStaff, StaffMember } from "@/hooks/useStaff"
+import { useStaff, StaffMember } from "../hooks/useStaff"
 
 interface EditStaffModalProps {
   isOpen: boolean

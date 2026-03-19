@@ -3,8 +3,8 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, UserPlus, Loader2, Mail, Lock, Shield } from "lucide-react"
-import { useStaff } from "@/hooks/useStaff"
-import { useProfile } from "@/hooks/useInventory"
+import { useStaff } from "../hooks/useStaff"
+import { useProfile } from "../hooks/useInventory"
 
 interface AddStaffModalProps {
   isOpen: boolean

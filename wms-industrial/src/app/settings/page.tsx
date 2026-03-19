@@ -14,9 +14,9 @@ import {
   Loader2
 } from "lucide-react"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
-import { supabase } from "@/lib/supabase"
-import { cn } from "@/lib/utils"
-import { useUpdateEmpresa, useProfile } from "@/hooks/useInventory"
+import { supabase } from "../../lib/supabase"
+import { cn } from "../../lib/utils"
+import { useUpdateEmpresa, useProfile } from "../../hooks/useInventory"
 import { useRouter } from "next/navigation"
 
 const sections = [

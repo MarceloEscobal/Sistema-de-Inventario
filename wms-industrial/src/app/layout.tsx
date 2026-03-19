@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Sidebar } from "@/components/sidebar";
-import { Providers } from "@/components/providers";
+import { Sidebar } from "../components/sidebar";
+import { Providers } from "../components/providers";
 
 export const metadata: Metadata = {
   title: "SISTEMA DE INVENTARIOS - Sistema de Gestión de Inventario",

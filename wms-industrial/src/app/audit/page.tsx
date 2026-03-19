@@ -11,8 +11,8 @@ import {
   Search,
   Loader2
 } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { useTransactions, useProfile } from "@/hooks/useInventory"
+import { cn } from "../../lib/utils"
+import { useTransactions, useProfile } from "../../hooks/useInventory"
 import { useEffect } from "react"
 import { useRouter } from "next/navigation"
 

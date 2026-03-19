@@ -15,13 +15,13 @@ import {
   ArrowRightLeft,
   QrCode
 } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { supabase } from "@/lib/supabase"
-import { useInventory, useEmpresa, useProfile } from "@/hooks/useInventory"
-import { AddProductModal } from "@/components/add-product-modal"
-import { DeleteConfirmModal } from "@/components/delete-confirm-modal"
-import { StockMovementModal } from "@/components/stock-movement-modal"
-import { QRCodeModal } from "@/components/qr-code-modal"
+import { cn } from "../../lib/utils"
+import { supabase } from "../../lib/supabase"
+import { useInventory, useEmpresa, useProfile } from "../../hooks/useInventory"
+import { AddProductModal } from "../../components/add-product-modal"
+import { DeleteConfirmModal } from "../../components/delete-confirm-modal"
+import { StockMovementModal } from "../../components/stock-movement-modal"
+import { QRCodeModal } from "../../components/qr-code-modal"
 
 export default function InventoryPage() {
   const { products, isLoading, createProduct, updateProduct, deleteProduct, addTransaction } = useInventory()

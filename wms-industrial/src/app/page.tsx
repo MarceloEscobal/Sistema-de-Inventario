@@ -13,8 +13,8 @@ import {
   Line
 } from 'recharts'
 import { DollarSign, Package, AlertCircle, TrendingUp, ArrowUpRight, ArrowDownRight, Loader2, Coins } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { useInventory, useTransactions, useEmpresa, useProfile } from "@/hooks/useInventory"
+import { cn } from "../lib/utils"
+import { useInventory, useTransactions, useEmpresa, useProfile } from "../hooks/useInventory"
 import { useMemo, useEffect } from "react"
 import { useRouter } from "next/navigation"
 

@@ -15,12 +15,12 @@ import {
   UserX,
   UserCog
 } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { useStaff, StaffMember } from "@/hooks/useStaff"
-import { useProfile } from "@/hooks/useInventory"
+import { cn } from "../../lib/utils"
+import { useStaff, StaffMember } from "../../hooks/useStaff"
+import { useProfile } from "../../hooks/useInventory"
 import { useRouter } from "next/navigation"
-import { AddStaffModal } from "@/components/add-staff-modal"
-import { EditStaffModal } from "@/components/edit-staff-modal"
+import { AddStaffModal } from "../../components/add-staff-modal"
+import { EditStaffModal } from "../../components/edit-staff-modal"
 
 export default function StaffPage() {
   const router = useRouter()

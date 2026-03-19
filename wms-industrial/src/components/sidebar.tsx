@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
+import { cn } from "../lib/utils"
 import { 
   LayoutDashboard, 
   Package, 
@@ -17,9 +17,9 @@ import {
 } from "lucide-react"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { supabase } from "@/lib/supabase"
+import { supabase } from "../lib/supabase"
 import { useRouter } from "next/navigation"
-import { useProfile } from "@/hooks/useInventory"
+import { useProfile } from "../hooks/useInventory"
 
 const menuItems = [
   { name: "Dashboard", icon: LayoutDashboard, href: "/" },
