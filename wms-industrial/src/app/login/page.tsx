@@ -89,10 +89,13 @@ export default function LoginPage() {
             <Warehouse size={26} color="#fff" />
           </motion.div>
           <h1 style={{ 
-            fontWeight: 800, fontSize: '1.4rem', 
-            letterSpacing: '-0.03em', color: 'var(--text-primary)',
-            margin: 0 
-          }}>WMS Industrial</h1>
+            fontWeight: 800, 
+            fontSize: '1.5rem', 
+            letterSpacing: '-0.02em', 
+            color: 'var(--text-primary)',
+            margin: '0.5rem 0 0.25rem 0',
+            lineHeight: 1.2
+          }}>Sistema de inventarios</h1>
           <p style={{ 
             marginTop: '0.35rem', fontSize: '0.8rem', 
             color: 'var(--text-muted)', letterSpacing: '0.08em', 

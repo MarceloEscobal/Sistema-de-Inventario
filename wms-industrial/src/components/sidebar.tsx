@@ -79,7 +79,7 @@ export function Sidebar() {
               <Warehouse size={15} className="text-white" />
             </div>
             <span className="truncate text-sm font-800 tracking-tight text-white" style={{ fontWeight: 800, letterSpacing: '-0.02em' }}>
-              WMS Industrial
+              Inventarios
             </span>
           </div>
         )}

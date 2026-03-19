@@ -4,7 +4,7 @@ import { Sidebar } from "@/components/sidebar";
 import { Providers } from "@/components/providers";
 
 export const metadata: Metadata = {
-  title: "WMS Industrial - Sistema de Gestión de Inventario",
+  title: "SISTEMA DE INVENTARIOS - Sistema de Gestión de Inventario",
   description: "Gestión de inventario de grado industrial con analíticas en tiempo real.",
 };
 
