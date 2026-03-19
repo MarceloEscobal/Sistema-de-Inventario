@@ -93,7 +93,7 @@ export default function StaffPage() {
 
       <div className="glass-card overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="data-table">
+          <table className="data-table min-w-[800px]">
             <thead>
               <tr>
                 <th>Perfil</th>

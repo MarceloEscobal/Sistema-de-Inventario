@@ -91,7 +91,7 @@ export default function SettingsPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
-      <div className="flex items-center justify-between page-header">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between page-header">
         <div>
           <h1 className="page-title">Configuración</h1>
           <p className="page-subtitle">Administra los parámetros técnicos y operativos del WMS.</p>
@@ -213,7 +213,7 @@ export default function SettingsPage() {
           <Database size={22} className={empresa?.id ? "text-emerald-500" : "text-rose-500"} />
           Estado de Sincronización
         </h3>
-        <div className="flex items-center justify-between text-sm">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center justify-between text-sm">
           <span className="text-slate-400 italic">ID del Entorno: {empresa?.id || (isLoading ? "Verificando..." : "Sincronizando por primera vez...")}</span>
           <span className={cn(
             "flex items-center gap-2 font-mono",

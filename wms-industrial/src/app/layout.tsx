@@ -15,10 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="dark">
-      <body className="flex min-h-screen antialiased">
+      <body className="flex flex-col md:flex-row min-h-screen antialiased pb-20 md:pb-0">
         <Providers>
           <Sidebar />
-          <main className="flex-1 overflow-y-auto p-8" style={{ color: 'var(--text-primary)' }}>
+          <main className="flex-1 overflow-x-hidden overflow-y-auto p-4 sm:p-6 md:p-8" style={{ color: 'var(--text-primary)' }}>
             {children}
           </main>
         </Providers>

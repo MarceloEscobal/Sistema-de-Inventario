@@ -231,7 +231,8 @@ export default function InventoryPage() {
       </div>
 
       <div className="glass-card overflow-hidden">
-        <table className="data-table">
+        <div className="overflow-x-auto w-full">
+          <table className="data-table min-w-[800px]">
           <thead>
             <tr>
               <th>SKU</th>
@@ -323,6 +324,7 @@ export default function InventoryPage() {
             No hay productos cargados en la base de datos.
           </div>
         )}
+        </div>
       </div>
       <QRCodeModal 
         isOpen={isQRModalOpen}

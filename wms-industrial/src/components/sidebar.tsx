@@ -58,11 +58,12 @@ export function Sidebar() {
   }
 
   return (
-    <motion.div 
-      initial={false}
-      animate={{ width: isCollapsed ? 72 : 260 }}
-      transition={{ duration: 0.2, ease: "easeInOut" }}
-      className="relative flex flex-col shrink-0"
+    <>
+      <motion.div 
+        initial={false}
+        animate={{ width: isCollapsed ? 72 : 260 }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+        className="hidden md:flex relative flex-col shrink-0"
       style={{
         background: 'rgba(10, 10, 22, 0.85)',
         backdropFilter: 'blur(24px)',
@@ -191,6 +192,42 @@ export function Sidebar() {
           {!isCollapsed && <span>Cerrar Sesión</span>}
         </button>
       </div>
-    </motion.div>
+      </motion.div>
+
+      <nav 
+        className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around px-1 py-2" 
+        style={{
+          background: 'rgba(10, 10, 22, 0.95)',
+          backdropFilter: 'blur(24px)',
+          WebkitBackdropFilter: 'blur(24px)',
+          borderTop: '1px solid rgba(255,255,255,0.06)',
+          boxShadow: '0 -4px 40px rgba(0,0,0,0.3)',
+          paddingBottom: 'calc(env(safe-area-inset-bottom) + 8px)'
+        }}
+      >
+        {accessibleMenuItems.map((item) => {
+          const isActive = pathname === item.href
+          return (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="flex flex-col items-center justify-center gap-1 p-1.5 transition-all"
+              style={isActive ? { color: '#a78bfa' } : { color: '#54516b' }}
+            >
+              <item.icon size={20} />
+              <span className="text-[10px] font-600 truncate">{item.name}</span>
+            </Link>
+          )
+        })}
+        <button 
+          onClick={handleSignOut}
+          className="flex flex-col items-center justify-center gap-1 p-1.5 transition-all hover:text-rose-400"
+          style={{ color: '#54516b' }}
+        >
+          <LogOut size={20} />
+          <span className="text-[10px] font-600 truncate">Salir</span>
+        </button>
+      </nav>
+    </>
   )
 }
